@@ -5,8 +5,7 @@ class Solution:
         for i in range (len(nums)):
             window_sum+=nums[i]
             if i>=k-1:
-                print(window_sum/k)
-                max_avg=max(max_avg,window_sum/k)
+                max_avg=max(max_avg,window_sum)
                 window_sum-=nums[window_start]
                 window_start+=1
-        return max_avg
+        return max_avg/k

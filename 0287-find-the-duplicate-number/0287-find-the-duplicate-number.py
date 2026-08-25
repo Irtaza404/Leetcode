@@ -1,0 +1,11 @@
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        fast,slow=nums[nums[0]],nums[0]
+        while slow!=fast:
+            fast=nums[nums[fast]]
+            slow=nums[slow]
+        slow =0
+        while slow!=fast:
+            fast=nums[fast]
+            slow=nums[slow] 
+        return fast
